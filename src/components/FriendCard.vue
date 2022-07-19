@@ -1,6 +1,6 @@
 <template>
     <ul v-for="friend of friends" :key="friend.id">
-        <h2>{{friend.name}}</h2>
+        <h2>{{friend.firstname}} {{friend.lastname}} </h2>
         <p>{{friend.comment}}</p>
     </ul>
 </template>
@@ -10,12 +10,13 @@ export default {
     data() {
         return {
             friends: [
-            {id: 1, name: "RONAN OGOR", comment: "The best of the best"},
-            {id: 2, name: "RONAN OGOR", comment: "The best of the best"},
-            {id: 2, name: "RONAN OGOR", comment: "The best of the best"},
-      ],
+            {id: 1, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
+            {id: 2, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
+            {id: 2, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
+            ],
         }
-    }
+    },
+
 }
 </script>
 

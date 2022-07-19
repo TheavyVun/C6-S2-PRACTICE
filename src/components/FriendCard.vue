@@ -1,8 +1,8 @@
 <template>
-    <ul v-for="friend of friends" :key="friend.id">
+    <section v-for="friend of friends" :key="friend.id">
         <h2>{{friend.firstname}} {{friend.lastname}} </h2>
         <p>{{friend.comment}}</p>
-    </ul>
+    </section>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    ul {
+    section {
         width: 40%;
         margin: auto;
         padding: 20px;

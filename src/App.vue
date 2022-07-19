@@ -7,7 +7,17 @@
 </template>
 
 <script>
+import FriendNav from './components/FriendNav.vue'
+import FriendForm from './components/FriendForm.vue'
+import FriendCard from './components/FriendCard.vue'
+
 export default {
+  name: 'App',
+  components: {
+    FriendNav,
+    FriendForm,
+    FriendCard
+  },
   data() {
     return {
       

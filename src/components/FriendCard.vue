@@ -7,11 +7,11 @@
 
 <script>
 export default {
+    name: 'friend-card',
     data() {
         return {
             friends: [
             {id: 1, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
-            {id: 2, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
             {id: 2, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
             ],
         }

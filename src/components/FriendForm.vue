@@ -3,13 +3,13 @@
         <input type="text" placeholder="First Name" class="form-control">
         <input type="text" placeholder="Last Name" class="form-control">
         <input type="text" placeholder="Comment" class="form-control">
-        <button class="form-control btn">ADD</button>
+        <button class="form-control btn" type="submit">ADD</button>
     </form>
 </template>
 
 <script>
 export default {
-
+    name: 'friend-form',
 }
 </script>
 

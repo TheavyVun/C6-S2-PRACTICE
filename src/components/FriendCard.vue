@@ -1,21 +1,13 @@
 <template>
-    <section v-for="friend of friends" :key="friend.id">
-        <h2>{{friend.firstname}} {{friend.lastname}} </h2>
-        <p>{{friend.comment}}</p>
+    <section>
+        <h2>RONAN OGOR </h2>
+        <p>The best of the best</p>
     </section>
 </template>
 
 <script>
 export default {
     name: 'friend-card',
-    data() {
-        return {
-            friends: [
-            {id: 1, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
-            {id: 2, firstname: "RONAN", lastname: "OGOR", comment: "The best of the best"},
-            ],
-        }
-    },
 
 }
 </script>

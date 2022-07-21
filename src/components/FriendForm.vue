@@ -1,15 +1,53 @@
 <template>
-    <form action="">
-        <input type="text" placeholder="First Name" class="form-control">
-        <input type="text" placeholder="Last Name" class="form-control">
-        <input type="text" placeholder="Comment" class="form-control">
-        <button class="form-control btn" type="submit">ADD</button>
+    <form @submit.prevent="addfriend" action="#">
+        <input v-model="firstname" type="text" placeholder="First Name" class="form-control">
+        <input v-model="lastname" type="text" placeholder="Last Name" class="form-control">
+        <input v-model="comment" type="text" placeholder="Comment" class="form-control">
+         <div> Skills: 
+            <input type="checkbox" name="skills" id="1" value="HTML" v-model="checkskill">
+            <label for="1">HTML</label>
+            <input type="checkbox" name="skills" id="2" value="CSS" v-model="checkskill">
+            <label for="2">CSS</label>
+            <input type="checkbox" name="skills" id="3" value="PHP" v-model="checkskill">
+            <label for="3">PHP</label>
+            <input type="checkbox" name="skills" id="3" value="VUE" v-model="checkskill">
+            <label for="4">VUE</label>
+        </div>
+        <button @add-friend="addfriend" class="form-control btn" type="submit">ADD</button>
     </form>
 </template>
 
 <script>
 export default {
-    name: 'friend-form',
+    emits: ["add-friend"],
+    data() {
+        return {
+            firstname: '',
+            lastname: '',
+            comment: '',
+            checkskill: [],
+        }
+    },
+    methods: {
+        addfriend(e) {
+            e.preventDefault
+            if (this.firstname != '' && this.lastname != '' && this.comment != '') {
+                let friend = {
+                    firstname: this.firstname,
+                    lastname: this.lastname,
+                    comment: this.comment,
+                    skill: this.checkskill,
+                }
+                this.$emit('add-friend', friend);
+                this.firstname = '';
+                this.lastname = '';
+                this.comment = '';
+                this.checkskill = [];
+
+            }
+
+        }
+    }
 }
 </script>
 

@@ -1,14 +1,28 @@
 <template>
     <section>
-        <h2>RONAN OGOR </h2>
-        <p>The best of the best</p>
+        <h2>{{fullname}}</h2>
+        <p>{{friend.comment}}</p>
+        <label for="">Skills: </label>
+        <ul> 
+          <friend-skill v-for="skill of friend.skill" :key="skill" :skill="skill" />
+        </ul>
     </section>
 </template>
 
 <script>
+import Skill from './FriendSkill.vue'
 export default {
-    name: 'friend-card',
-
+  components: {
+    'friend-skill': Skill,
+  },
+  props: {
+    friend: Object,
+  },
+  computed: {
+    fullname() {
+        return this.friend.firstname + ' ' + this.friend.lastname;
+    }
+  }
 }
 </script>
 
@@ -26,5 +40,10 @@ export default {
     }
     p {
         margin-top: 10px;
+    }
+    ul {
+        margin: 0;
+        box-sizing: border-box;
+        width: 90%;
     }
 </style>
